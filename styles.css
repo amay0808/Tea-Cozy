@@ -29,18 +29,17 @@ body {
   color: lightgray;
 }
 .hero-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 700px;
-  background-image: url("images/img-mission-background.webp");
   background-size: cover;
   background-position: center;
+  background-image: url("images/img-mission-background.webp");
 }
-.hero-image h2,
-.hero-image h4 {
-  margin: 0;
-  display: flex;
+.hero-text {
+  background-color: black;
   color: white;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
+  text-align: center;
   background-color: black;
 }
