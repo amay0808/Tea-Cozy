@@ -74,3 +74,38 @@ body {
   height: 200px;
   width: 300px;
 }
+.location {
+  color: seashell;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.locations-title {
+  /* position: absolute; */
+  font-size: 28px;
+  color: seashell;
+  margin-bottom: 20px;
+}
+.locations-image {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-image: url("images/img-locations-background.webp");
+  gap: 40px;
+  align-items: center;
+}
+.location-item {
+  height: 250px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: seashell;
+}
