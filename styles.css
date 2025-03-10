@@ -1,15 +1,13 @@
 body {
-  /* margin: auto; */
   font-family: "Helvetica", sans-serif;
   background-color: black;
 }
-.main {
-  margin: auto;
-}
+
 .logo {
   margin-left: 10px;
   height: 50px;
 }
+
 .header {
   display: flex;
   flex-wrap: wrap;
@@ -17,19 +15,23 @@ body {
   align-items: center;
   border-bottom: 1px solid seashell;
 }
+
 .nav-links {
   display: flex;
   justify-content: space-between;
   gap: 15px;
   list-style-type: none;
 }
+
 .nav-links a {
   text-decoration: underline;
   color: white;
 }
+
 .nav-links a:hover {
   color: lightgray;
 }
+
 .hero-image {
   display: flex;
   flex-direction: column;
@@ -39,66 +41,66 @@ body {
   background-position: center;
   background-image: url("images/img-mission-background.webp");
 }
+
 .hero-text {
-  background-color: black;
   font-size: 22px;
   color: seashell;
   text-align: center;
   background-color: black;
 }
+
 .featured-tea {
   font-size: 22px;
   color: seashell;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: black;
 }
+
 .featured-tea-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 .featured-tea-image {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 20px;
   max-width: 1000px;
 }
+
 .featured-tea-image img {
   height: 200px;
   width: 300px;
 }
-.location {
-  color: seashell;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 15px;
-}
-.locations-title {
-  /* position: absolute; */
-  font-size: 28px;
-  color: seashell;
-  margin-bottom: 20px;
-}
+
 .locations-image {
-  height: 500px;
+  background-image: url("images/img-locations-background.webp");
+  min-height: 500px;
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   background-size: cover;
   background-position: center;
-  background-image: url("images/img-locations-background.webp");
-  gap: 40px;
-  align-items: center;
+  position: relative;
+  gap: 20px;
+  padding-top: 50px;
 }
+
+.locations-title {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 28px;
+  color: seashell;
+}
+
 .location-item {
   height: 250px;
   width: 300px;
@@ -108,4 +110,44 @@ body {
   align-items: center;
   background-color: black;
   color: seashell;
+}
+
+/* Footer styles - Grouped common properties */
+.footer-title,
+.footer-email,
+.footer-phone {
+  font-size: 22px;
+  color: seashell;
+  text-align: center;
+}
+.footer-copyright {
+  font-size: 22px;
+  color: seashell;
+  margin-left: 20px;
+}
+.footer-copyright {
+  margin-left: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .locations-image {
+    flex-direction: row;
+    height: auto;
+  }
+  .footer-copyright {
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .locations-title {
+    position: static;
+    transform: none;
+    margin-bottom: 20px;
+  }
+
+  .locations-image {
+    flex-direction: column;
+  }
 }
