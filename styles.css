@@ -6,12 +6,11 @@ body {
   padding: 0;
 }
 
-/* Logo Fix: Prevents layout shift */
 .logo {
   margin-left: 10px;
-  height: 50px;
-  width: auto;
-  aspect-ratio: 3 / 1; /* Ensures proper scaling */
+  height: auto;
+  width: 150px;
+  object-fit: contain;
 }
 
 /* Header Fix: Fixed height prevents shifting */
@@ -48,7 +47,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 700px;
   min-height: 700px; /* Prevents CLS */
   background-size: cover;
   background-position: center;
@@ -92,6 +90,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 20px;
+  height: auto;
   max-width: 1000px;
   padding: 10px;
 }
@@ -101,7 +100,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 300px; /* Ensures consistent layout */
+  width: auto; /* Adjusts based on container size */
+  height: 100%; /* Keeps natural aspect ratio */
 }
 
 .tea-item h4 {
