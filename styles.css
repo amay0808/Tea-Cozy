@@ -6,7 +6,7 @@
   min-height: 700px;
   background-size: cover;
   background-position: center;
-  background-image: url("/images/img-mission-background (1).webp");
+  background-image: url("/images/img-mission-background-1.webp");
   margin: 0;
 }
 
@@ -73,7 +73,7 @@
 
 /* Locations Section */
 .locations-image {
-  background-image: url("./images/img-locations-background-1.webp");
+  background-image: url("/images/img-locations-background-1.webp");
   min-height: 500px;
   display: flex;
   flex-wrap: wrap;
