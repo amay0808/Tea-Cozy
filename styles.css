@@ -6,19 +6,23 @@ body {
   padding: 0;
 }
 
+/* Logo Fix: Prevents layout shift */
 .logo {
   margin-left: 10px;
   height: 50px;
-  width: auto; /* Ensure proportional scaling */
+  width: auto;
+  aspect-ratio: 3 / 1; /* Ensures proper scaling */
 }
 
+/* Header Fix: Fixed height prevents shifting */
 .header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid seashell;
-  height: 69px; /* Fixed height to prevent layout shift */
+  height: 69px;
+  min-height: 69px;
 }
 
 .nav-links {
@@ -39,16 +43,16 @@ body {
   color: lightgray;
 }
 
+/* Hero Image Fix: Ensure space is reserved */
 .hero-image {
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 700px;
+  min-height: 700px; /* Prevents CLS */
   background-size: cover;
   background-position: center;
   background-image: url("images/img-mission-background.webp");
-  /* Prevent content layout shift */
-  min-height: 500px;
   margin: 0;
 }
 
@@ -60,18 +64,6 @@ body {
   padding: 10px 0;
 }
 
-.hero-text h1 {
-  margin-top: 0;
-  margin-bottom: 15px;
-}
-
-.hero-text h2 {
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 1.2rem;
-  font-weight: normal;
-}
-
 .featured-tea {
   font-size: 22px;
   color: seashell;
@@ -79,6 +71,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px 0;
+  min-height: 300px; /* Prevent shifting */
 }
 
 .featured-tea-text {
@@ -103,10 +96,12 @@ body {
   padding: 10px;
 }
 
+/* Image Fix: All images have defined sizes */
 .tea-item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 300px; /* Ensures consistent layout */
 }
 
 .tea-item h4 {
@@ -117,12 +112,14 @@ body {
 .featured-tea-image img {
   height: 200px;
   width: 300px;
-  object-fit: cover; /* Prevent image distortion */
+  object-fit: cover;
+  aspect-ratio: 3 / 2; /* Ensures no reflow */
 }
 
+/* Locations Section Fix */
 .locations-image {
   background-image: url("images/img-locations-background.webp");
-  min-height: 500px;
+  min-height: 500px; /* Reserved height to prevent CLS */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -131,7 +128,7 @@ body {
   background-position: center;
   position: relative;
   gap: 20px;
-  padding-top: 100px; /* Increased to accommodate title */
+  padding-top: 100px;
   padding-bottom: 20px;
 }
 
@@ -156,7 +153,7 @@ body {
   align-items: center;
   background-color: black;
   color: seashell;
-  opacity: 0.9; /* Slightly transparent */
+  opacity: 0.9;
 }
 
 .location-item h3 {
@@ -167,7 +164,7 @@ body {
   margin: 5px 0;
 }
 
-/* Footer styles */
+/* Footer */
 footer {
   padding: 20px 0;
 }
@@ -181,17 +178,8 @@ footer {
   margin: 5px 0;
 }
 
-.footer-title h3 {
-  margin: 10px 0;
-}
-
-.footer-email p,
-.footer-phone p {
-  margin: 5px 0;
-}
-
 .footer-copyright {
-  font-size: 16px; /* Reduced font size */
+  font-size: 16px;
   color: seashell;
   margin-left: 20px;
   padding-top: 10px;
