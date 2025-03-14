@@ -8,7 +8,52 @@
       content="Tea Cozy - A tea shop offering handpicked, artisanal, sustainable, organic teas with locations in Portland, Maine. Visit us for our Tea of the Month."
     />
     <title>Tea Cozy</title>
-    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Preload critical assets -->
+    <link rel="preload" href="images/img-tea-cozy-logo.webp" as="image" />
+    <link rel="preload" href="images/img-mission-background.webp" as="image" />
+
+    <!-- Inline critical CSS to eliminate render-blocking resources -->
+    <style>
+      body {
+        font-family: "Helvetica", sans-serif;
+        background-color: black;
+        color: seashell;
+        margin: 0;
+        padding: 0;
+      }
+      .header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid seashell;
+      }
+      .logo {
+        margin-left: 10px;
+        height: 50px;
+        width: auto;
+      }
+      .nav-links {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+        list-style-type: none;
+      }
+      .nav-links a {
+        text-decoration: underline;
+        color: white;
+      }
+    </style>
+
+    <!-- Defer non-critical CSS -->
+    <link
+      rel="stylesheet"
+      href="styles.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript><link rel="stylesheet" href="styles.css" /></noscript>
   </head>
   <body>
     <header class="header">
@@ -16,6 +61,8 @@
         src="images/img-tea-cozy-logo.webp"
         alt="Tea Cozy logo"
         class="logo"
+        width="150"
+        height="50"
       />
       <nav>
         <ul class="nav-links">
@@ -41,26 +88,53 @@
           <h3>What's Steeping at The Tea Cozy?</h3>
           <div class="featured-tea-image">
             <div class="tea-item">
-              <img src="images/img-berryblitz.webp" alt="Berry Blitz Tea" />
+              <img
+                src="images/img-berryblitz.webp"
+                alt="Berry Blitz Tea"
+                width="300"
+                height="200"
+                loading="lazy"
+              />
               <h4>Fall Berry Blitz Tea</h4>
             </div>
             <div class="tea-item">
-              <img src="images/img-spiced-rum.webp" alt="Spiced Rum Tea" />
+              <img
+                src="images/img-spiced-rum.webp"
+                alt="Spiced Rum Tea"
+                width="300"
+                height="200"
+                loading="lazy"
+              />
               <h4>Spiced Rum Tea</h4>
             </div>
             <div class="tea-item">
-              <img src="images/img-donut.webp" alt="Seasonal Donuts" />
+              <img
+                src="images/img-donut.webp"
+                alt="Seasonal Donuts"
+                width="300"
+                height="200"
+                loading="lazy"
+              />
               <h4>Seasonal Donuts</h4>
             </div>
             <div class="tea-item">
               <img
                 src="images/img-bedford-bizarre.webp"
                 alt="Bedford Bizarre Tea"
+                width="300"
+                height="200"
+                loading="lazy"
               />
               <h4>Bedford Bizarre Tea</h4>
             </div>
             <div class="tea-item">
-              <img src="images/img-myrtle-ave.webp" alt="Myrtle Ave Tea" />
+              <img
+                src="images/img-myrtle-ave.webp"
+                alt="Myrtle Ave Tea"
+                width="300"
+                height="200"
+                loading="lazy"
+              />
               <h4>Myrtle Ave Tea</h4>
             </div>
           </div>
