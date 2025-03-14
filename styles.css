@@ -71,7 +71,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px 0;
-  min-height: 300px; /* Prevent shifting */
+  min-height: 400px; /* Prevent shifting */
 }
 
 .featured-tea-text {
@@ -113,12 +113,11 @@ body {
   height: 200px;
   width: 300px;
   object-fit: cover;
-  aspect-ratio: 3 / 2; /* Ensures no reflow */
 }
 
 /* Locations Section Fix */
 .locations-image {
-  background-image: url("images/img-locations-background.webp");
+  background-image: url("./images/img-locations-background-1.webp");
   min-height: 500px; /* Reserved height to prevent CLS */
   display: flex;
   flex-wrap: wrap;
