@@ -13,16 +13,21 @@
     <link rel="preload" href="images/img-tea-cozy-logo-1.webp" as="image" />
     <link
       rel="preload"
-      href="images/img-mission-background-1.webps"
+      href="images/img-mission-background-1.webp"
       as="image"
     />
 
     <!-- Inline critical CSS to eliminate render-blocking resources -->
     <style>
+      :root {
+        --primary-color: seashell;
+        --background-color: black;
+      }
+
       body {
         font-family: "Helvetica", sans-serif;
-        background-color: black;
-        color: seashell;
+        background-color: var(--background-color);
+        color: var(--primary-color);
         margin: 0;
         padding: 0;
       }
@@ -31,7 +36,7 @@
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
-        border-bottom: 1px solid seashell;
+        border-bottom: 1px solid var(--primary-color);
       }
       .logo {
         margin-left: 10px;
@@ -50,14 +55,8 @@
       }
     </style>
 
-    <!-- Defer non-critical CSS -->
-    <link
-      rel="stylesheet"
-      href="styles.css"
-      media="print"
-      onload="this.media='all'"
-    />
-    <noscript><link rel="stylesheet" href="styles.css" /></noscript>
+    <!-- Regular CSS loading - already optimized -->
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="header">
@@ -67,6 +66,7 @@
         class="logo"
         width="150"
         height="50"
+        fetchpriority="high"
       />
       <nav>
         <ul class="nav-links">
@@ -94,6 +94,11 @@
             <div class="tea-item">
               <img
                 src="images/img-berryblitz-1.webp"
+                srcset="
+                  images/img-berryblitz-1.webp 300w,
+                  images/img-berryblitz-1.webp 600w
+                "
+                sizes="(max-width: 768px) 300px, 600px"
                 alt="Berry Blitz Tea"
                 width="300"
                 height="200"
@@ -104,6 +109,11 @@
             <div class="tea-item">
               <img
                 src="images/img-spiced-rum-1.webp"
+                srcset="
+                  images/img-spiced-rum-1.webp 300w,
+                  images/img-spiced-rum-1.webp 600w
+                "
+                sizes="(max-width: 768px) 300px, 600px"
                 alt="Spiced Rum Tea"
                 width="300"
                 height="200"
@@ -114,6 +124,11 @@
             <div class="tea-item">
               <img
                 src="images/img-donut-1.webp"
+                srcset="
+                  images/img-donut-1.webp 300w,
+                  images/img-donut-1.webp 600w
+                "
+                sizes="(max-width: 768px) 300px, 600px"
                 alt="Seasonal Donuts"
                 width="300"
                 height="200"
@@ -124,6 +139,11 @@
             <div class="tea-item">
               <img
                 src="images/img-bedford-bizarre-1.webp"
+                srcset="
+                  images/img-bedford-bizarre-1.webp 300w,
+                  images/img-bedford-bizarre-1.webp 600w
+                "
+                sizes="(max-width: 768px) 300px, 600px"
                 alt="Bedford Bizarre Tea"
                 width="300"
                 height="200"
@@ -134,6 +154,11 @@
             <div class="tea-item">
               <img
                 src="images/img-myrtle-ave-1.webp"
+                srcset="
+                  images/img-myrtle-ave-1.webp 300w,
+                  images/img-myrtle-ave-1.webp 600w
+                "
+                sizes="(max-width: 768px) 300px, 600px"
                 alt="Myrtle Ave Tea"
                 width="300"
                 height="200"

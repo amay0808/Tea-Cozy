@@ -1,31 +1,40 @@
+/* Use CSS variables for consistent theming */
+:root {
+  --primary-color: seashell;
+  --background-color: black;
+  --text-size-normal: 22px;
+  --spacing-standard: 20px;
+}
+
 /* Hero Section */
 .hero-image {
   display: flex;
   flex-direction: column;
   justify-content: center;
   min-height: 700px;
+  background-color: #333; /* Prevents content shifting while image loads */
+  background-image: url("images/img-mission-background-1.webp");
   background-size: cover;
   background-position: center;
-  background-image: url("images/img-mission-background-1.webp");
   margin: 0;
 }
 
 .hero-text {
-  font-size: 22px;
-  color: seashell;
+  font-size: var(--text-size-normal);
+  color: var(--primary-color);
   text-align: center;
-  background-color: black;
+  background-color: var(--background-color);
   padding: 10px 0;
 }
 
 /* Featured Tea Section */
 .featured-tea {
-  font-size: 22px;
-  color: seashell;
+  font-size: var(--text-size-normal);
+  color: var(--primary-color);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 0;
+  padding: var(--spacing-standard) 0;
   min-height: 400px;
 }
 
@@ -46,7 +55,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: var(--spacing-standard);
   height: auto;
   max-width: 1000px;
   padding: 10px;
@@ -73,6 +82,7 @@
 
 /* Locations Section */
 .locations-image {
+  background-color: #333; /* Prevents content shifting while image loads */
   background-image: url("images/img-locations-background-1.webp");
   min-height: 500px;
   display: flex;
@@ -82,18 +92,19 @@
   background-size: cover;
   background-position: center;
   position: relative;
-  gap: 20px;
+  gap: var(--spacing-standard);
   padding-top: 100px;
-  padding-bottom: 20px;
+  padding-bottom: var(--spacing-standard);
 }
 
 .locations-title {
   position: absolute;
   top: 30px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  margin: 0 auto; /* More efficient than transform */
   font-size: 28px;
-  color: seashell;
+  color: var(--primary-color);
   width: 100%;
   text-align: center;
 }
@@ -105,8 +116,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: black;
-  color: seashell;
+  background-color: var(--background-color);
+  color: var(--primary-color);
   opacity: 0.9;
 }
 
@@ -120,26 +131,26 @@
 
 /* Footer Styles */
 footer {
-  padding: 20px 0;
+  padding: var(--spacing-standard) 0;
 }
 
 .footer-title,
 .footer-email,
 .footer-phone {
-  font-size: 22px;
-  color: seashell;
+  font-size: var(--text-size-normal);
+  color: var(--primary-color);
   text-align: center;
   margin: 5px 0;
 }
 
 .footer-copyright {
   font-size: 16px;
-  color: seashell;
-  margin-left: 20px;
+  color: var(--primary-color);
+  margin-left: var(--spacing-standard);
   padding-top: 10px;
 }
 
-/* Responsive Styles */
+/* Responsive Styles - Optimized */
 @media (max-width: 768px) {
   .locations-image {
     flex-direction: row;
@@ -159,14 +170,13 @@ footer {
 @media (max-width: 600px) {
   .locations-title {
     position: static;
-    transform: none;
-    margin-bottom: 20px;
-    padding-top: 20px;
+    margin-bottom: var(--spacing-standard);
+    padding-top: var(--spacing-standard);
   }
 
   .locations-image {
     flex-direction: column;
-    padding-top: 20px;
+    padding-top: var(--spacing-standard);
   }
 
   .header {
@@ -177,5 +187,11 @@ footer {
 
   .nav-links {
     margin: 10px 0;
+  }
+
+  /* Optimize image sizes for mobile */
+  .featured-tea-image img {
+    height: 150px;
+    width: 250px;
   }
 }
