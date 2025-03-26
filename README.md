@@ -4,6 +4,8 @@
 
 This project is a static website built as part of Codecademy Frontend course. The "Tea Cozy" website is designed to showcase a fictional tea shop, featuring sections such as the mission statement, featured teas, and locations.
 
+[Live Demo](https://amay0808.github.io/Tea-Cozy/)
+
 ## Features
 
 - Responsive layout for different screen sizes
